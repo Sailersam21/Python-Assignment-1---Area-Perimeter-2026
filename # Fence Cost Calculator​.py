@@ -4,8 +4,7 @@
 
 
 def calculate_fencing_cost():
-    keep_going = ""
-    while keep_going == "":
+    while True:
         print()
         print("---welcome to the fencing Cost Calculator---\n")
         try:
@@ -21,25 +20,29 @@ def calculate_fencing_cost():
             
             print(f" Perimeter: {perimeter} meters \n")
             print(f"Total Cost of Fencing: ${total_cost}")
+            break
             
         except ValueError:
             print("Please enter valid numeric values.")
-            continue
 
 # Asking if the persons wants to perform another calculation
        
-        choice = input("Do you want to perform another calculation? (y/n): ").lower()
-        if choice == "y" :
-            continue
-        elif choice == "n":
-            keep_going = choice
         
-        else:
-            print ("Please enter either y or n.")
             
  
-# Calling the function
+# Main routine. 
 calculate_fencing_cost()
+while True:
+    choice = input("Do you want to perform another calculation? (y/n): ").lower()
+    if choice == "y" :
+        calculate_fencing_cost()
+    elif choice == "n":
+        break
+    
+    else:
+        print ("Please enter either y or n.")
+
+
 print("Exiting the program. Goodbye!\n")           
 
 
