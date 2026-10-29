@@ -4,9 +4,10 @@
 
 
 def calculate_fencing_cost():
-    while True:
+    keep_going = ""
+    while keep_going == "":
         print()
-        print("welcome to the fencing Cost Calculator\n")
+        print("---welcome to the fencing Cost Calculator---\n")
         try:
 # Ask for the length width and cost
             length = float(input("Enter the length of the fence (in meters): "))
@@ -26,13 +27,22 @@ def calculate_fencing_cost():
             continue
 
 # Asking if the persons wants to perform another calculation
-
-        choice = input("Do you want to perform another calculation? (y/n): \n")
-        if choice == "y":
-            print("Exiting the program. Goodbye!")
-
+       
+        choice = input("Do you want to perform another calculation? (y/n): ").lower()
+        if choice == "y" :
+            continue
+        elif choice == "n":
+            keep_going = choice
+        
+        else:
+            print ("Please enter either y or n.")
+            
+ 
 # Calling the function
 calculate_fencing_cost()
+print("Exiting the program. Goodbye!\n")           
+
+
 
 
 
